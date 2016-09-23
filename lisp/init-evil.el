@@ -31,5 +31,14 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (global-set-key [escape] 'evil-exit-emacs-state)
 
+(define-key evil-normal-state-map (kbd "C-]") 'helm-gtags-find-tag-from-here)
+(define-key evil-motion-state-map (kbd "C-]") 'helm-gtags-find-tag-from-here)
+(define-key evil-normal-state-map (kbd "C-u C-]") 'helm-gtags-find-tag)
+(define-key evil-normal-state-map (kbd "C-u C-u C-]") 'helm-gtags-find-tag-other-window)
+
+(define-key evil-normal-state-map (kbd "M-]") 'helm-gtags-find-rtag)
+
+(define-key evil-normal-state-map (kbd "C-t") 'helm-gtags-pop-stack)
+
 
 (provide 'init-evil)
