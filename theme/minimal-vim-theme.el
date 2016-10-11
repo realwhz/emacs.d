@@ -4,7 +4,7 @@
 (custom-theme-set-faces
  'minimal-vim
 
- `(default ((t (:foreground "black" :background "white"))))
+ `(default ((t (:foreground "black" :background unspecified))))
 
  `(region ((t (:background "grey"))))
 

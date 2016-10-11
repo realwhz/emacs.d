@@ -5,10 +5,8 @@
               (height . 40)
               (font . "Monospace-11")
               (fullscreen . maximized)))
-      (tool-bar-mode -1)
-      (set-background-color "white")))
-
-
+      (tool-bar-mode -1))
+  (menu-bar-mode -1))
 
 
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 1)))
