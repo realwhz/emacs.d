@@ -114,6 +114,9 @@ set nomodeline
 " Make gf more useful
 set path=.,/usr/include,,**
 
+" Set working directory to the current file
+autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related

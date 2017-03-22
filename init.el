@@ -75,6 +75,10 @@
 ;;; Projectile
 (require 'init-projectile)
 
+
+;;; Git
+(require 'init-git)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -82,7 +86,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (projectile ag ggtags go-mode cider clojure-mode whole-line-or-region solarized-theme zenburn-theme exec-path-from-shell fullframe))))
+    (magit projectile ag ggtags go-mode cider clojure-mode whole-line-or-region solarized-theme zenburn-theme exec-path-from-shell fullframe))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
