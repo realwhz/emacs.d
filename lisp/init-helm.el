@@ -1,6 +1,7 @@
 (require-package 'helm)
 
-(require-package 'helm-ag)
+;; Prefer Wilfred/ag.el
+;;(require-package 'helm-ag)
 
 (require-package 'helm-projectile)
 

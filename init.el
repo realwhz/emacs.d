@@ -64,6 +64,11 @@
 
 ;;; Helm config
 (require 'init-helm)
+
+;;; ag - the silver searcher config
+(require 'init-ag)
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -71,7 +76,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-gtags helm-projectile helm-ag helm evil go-mode cider clojure-mode solarized-theme zenburn-theme exec-path-from-shell fullframe))))
+    (ag helm-gtags helm-projectile helm evil go-mode cider clojure-mode solarized-theme zenburn-theme exec-path-from-shell fullframe))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
