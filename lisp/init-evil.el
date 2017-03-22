@@ -1,8 +1,9 @@
 (require-package 'evil)
-
-;;(require 'evil)
+(require-package 'evil-search-highlight-persist)
 
 (evil-mode t)
+
+(global-evil-search-highlight-persist t)
 
 ;;; ESC quits
 (defun minibuffer-keyboard-quit ()
