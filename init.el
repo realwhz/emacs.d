@@ -30,12 +30,10 @@
 (require 'init-themes)
 
 
-
 ;;; Misc config
 (require 'init-misc)
 
 (require 'init-text)
-
 
 
 ;;; CC mode customization
@@ -59,15 +57,23 @@
 
 
 ;;; Evil config
-(require 'init-evil)
+;;(require 'init-evil)
+
+
+;;; GNU Global
+(require 'init-gtags)
 
 
 ;;; Helm config
-(require 'init-helm)
+;;(require 'init-helm)
+
 
 ;;; ag - the silver searcher config
 (require 'init-ag)
 
+
+;;; Projectile
+(require 'init-projectile)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -76,7 +82,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ag helm-gtags helm-projectile helm evil go-mode cider clojure-mode solarized-theme zenburn-theme exec-path-from-shell fullframe))))
+    (projectile ag ggtags go-mode cider clojure-mode whole-line-or-region solarized-theme zenburn-theme exec-path-from-shell fullframe))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

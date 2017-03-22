@@ -40,5 +40,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (define-key evil-motion-state-map [down-mouse-1] nil)
 
+(eval-after-load 'ggtags
+  '(progn
+     (evil-make-overriding-map ggtags-mode-map 'normal)
+     ;; force update evil keymaps after ggtags-mode loaded
+     (add-hook 'ggtags-mode-hook #'evil-normalize-keymaps)))
+
+
 
 (provide 'init-evil)

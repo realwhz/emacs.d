@@ -20,4 +20,9 @@
 ;; keep the phrase searched highlighted
 ;;(setq lazy-highlight-cleanup nil)
 
+(require-package 'whole-line-or-region)
+
+(whole-line-or-region-mode t)
+
+
 (provide 'init-misc)
