@@ -11,7 +11,7 @@
 (setq backup-by-copying t)
 
 (ffap-bindings)
-;;(setq ffap-require-prefix t) ; C-u C-x C-f for example
+(setq ffap-require-prefix t) ; C-u C-x C-f for example
 
 (xterm-mouse-mode t)
 
