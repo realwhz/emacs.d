@@ -35,8 +35,10 @@
 (require 'init-cc)
 
 
-;;; Scons config
+;;; CMake/Scons config
 (require 'init-scons)
+
+(require 'init-cmake)
 
 
 ;;; Scheme related
@@ -82,7 +84,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (magit zenburn-theme whole-line-or-region solarized-theme projectile go-mode ggtags fullframe exec-path-from-shell cider ag))))
+    (cmake-mode magit zenburn-theme whole-line-or-region solarized-theme projectile go-mode ggtags fullframe exec-path-from-shell cider ag))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
