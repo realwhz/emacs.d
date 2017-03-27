@@ -10,20 +10,20 @@
 (setq auto-save-default nil)
 (setq backup-by-copying t)
 
-;; (ffap-bindings)
+(ffap-bindings)
 ;; (setq ffap-require-prefix t) ; C-u C-x C-f for example
 
-(setq ido-enable-flex-matching t); flexibly match names
-(setq ido-everywhere t); use ido-mode everywhere, in buffers and for finding files
-(setq ido-use-filename-at-point 'guess); for find-file-at-point
-(ido-mode t)
+;; (setq ido-enable-flex-matching t); flexibly match names
+;; (setq ido-everywhere t); use ido-mode everywhere, in buffers and for finding files
+;; (setq ido-use-filename-at-point 'guess); for find-file-at-point, conflict with ffap-bindings
+;; (ido-mode t)
 
 (xterm-mouse-mode t)
 
 ;;(desktop-save-mode t)
 
 ;; keep the phrase searched highlighted
-;;(setq lazy-highlight-cleanup nil)
+(setq lazy-highlight-cleanup nil)
 
 (require-package 'whole-line-or-region)
 
