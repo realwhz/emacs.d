@@ -10,8 +10,13 @@
 (setq auto-save-default nil)
 (setq backup-by-copying t)
 
-(ffap-bindings)
-(setq ffap-require-prefix t) ; C-u C-x C-f for example
+;; (ffap-bindings)
+;; (setq ffap-require-prefix t) ; C-u C-x C-f for example
+
+(setq ido-enable-flex-matching t); flexibly match names
+(setq ido-everywhere t); use ido-mode everywhere, in buffers and for finding files
+(setq ido-use-filename-at-point 'guess); for find-file-at-point
+(ido-mode t)
 
 (xterm-mouse-mode t)
 
