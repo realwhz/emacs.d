@@ -2,7 +2,7 @@
 
 (setq ispell-program-name "aspell")
 
-(setq tags-case-fold-search t)
+(setq tags-case-fold-search nil)
 
 (put 'narrow-to-region 'disabled nil)
 

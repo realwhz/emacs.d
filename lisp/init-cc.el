@@ -22,8 +22,7 @@
   (c-set-offset 'inline-open 0)
   (c-toggle-hungry-state t)
   (which-function-mode t)
-  (modify-syntax-entry ?_ "w")
-  (ggtags-mode t))
+  (modify-syntax-entry ?_ "w"))
 
 
 (add-hook 'c-mode-hook 'my-c-mode-common-hook)

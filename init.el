@@ -58,7 +58,7 @@
 
 
 ;;; GNU Global
-(require 'init-gtags)
+;; (require 'init-gtags)
 
 
 ;;; Helm config
