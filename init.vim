@@ -20,6 +20,7 @@ set autoread
 
 " Turn on the Wild menu
 set wildmenu
+set wildmode=list:longest,full
 
 " Configure backspace so it acts as it should act
 set backspace=indent,eol,start
@@ -73,6 +74,9 @@ if has("mouse")
     set mouse=a
 endif
 
+" Always show full path of current file
+set statusline+=%F
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -112,10 +116,41 @@ set noswapfile
 set nomodeline
 
 " Make gf more useful
-set path=.,/usr/include,,**
+set path=.,..,/usr/include,**
 
 " Set working directory to the current file
 autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
+
+" Guess the alternative file
+function GuessAlternative()
+    let suffix=expand("%:e")
+
+    let newname=""
+
+    if (suffix=="cpp")
+        return expand("%:r").".h"
+    elseif (suffix=="h")
+        return expand("%:r").".cpp"
+    endif
+endfunction
+
+com A execute 'find ' GuessAlternative()
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " bind K to grep word under cursor instead of man
+  set keywordprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -148,7 +183,7 @@ set cino=(0,N-s,:0,b1,g0
 if has("cscope")
     set csprg=gtags-cscope
     " Prefer universal-ctags over cscope/global
-    set csto=0
+    set csto=1
     set cst
     set nocsverb
     if filereadable("GTAGS")

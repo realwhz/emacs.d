@@ -4,6 +4,8 @@
 
 (setq tags-case-fold-search nil)
 
+(setq dabbrev-case-fold-search nil)
+
 (put 'narrow-to-region 'disabled nil)
 
 (setq make-backup-files nil)
