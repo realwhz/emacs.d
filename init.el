@@ -53,6 +53,10 @@
 (require 'init-go)
 
 
+;;; Line mark mode
+(require 'init-line)
+
+
 ;;; Evil config
 ;;(require 'init-evil)
 

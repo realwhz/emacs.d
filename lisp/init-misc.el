@@ -20,7 +20,8 @@
 ;; (setq ido-use-filename-at-point 'guess); for find-file-at-point, conflict with ffap-bindings
 ;; (ido-mode t)
 
-(xterm-mouse-mode t)
+(unless (window-system)
+  (xterm-mouse-mode t))
 
 ;;(desktop-save-mode t)
 
@@ -28,8 +29,10 @@
 (setq lazy-highlight-cleanup nil)
 
 (require-package 'whole-line-or-region)
-
 (whole-line-or-region-mode t)
+
+(require-package 'dot-mode)
+(add-hook 'find-file-hooks 'dot-mode-on)
 
 
 (provide 'init-misc)
