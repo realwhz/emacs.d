@@ -13,29 +13,30 @@
     map)
   "Keymap used in line mark mode")
 
+(defun visual-line-mark-calibrate ()
+    "Helper function -- adjust positions of point and mark depending on their order"
+  (if (>= (point) (mark t))
+      (progn
+	(exchange-point-and-mark)
+	(beginning-of-line)
+	(exchange-point-and-mark)
+	(end-of-line))
+    (exchange-point-and-mark)
+    (end-of-line)
+    (exchange-point-and-mark)
+    (beginning-of-line)))
+
 (defun visual-line-mark-next-line (&optional n)
   "Like `next-line' but selects the whole line."
   (interactive "p")
   (forward-line n)
-  (when (> (point) (mark t))
-    (exchange-point-and-mark)
-    (beginning-of-line)
-    (exchange-point-and-mark)
-    (end-of-line)))
+  (visual-line-mark-calibrate))
 
 (defun visual-line-mark-previous-line (&optional n)
   "Like `previous-line' but selects the whole line."
   (interactive "p")
   (forward-line (- n))
-  (when (< (point) (mark t))
-    (exchange-point-and-mark)
-    (end-of-line)
-    (exchange-point-and-mark)
-    (beginning-of-line))
-  (when (= (point) (mark t))
-    (beginning-of-line)
-    (push-mark (point) t t)
-    (end-of-line)))
+  (visual-line-mark-calibrate))
 
 (define-minor-mode visual-line-mark-mode
   "Toggle use of visual line mark minor mode"
