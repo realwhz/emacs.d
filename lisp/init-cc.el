@@ -24,7 +24,9 @@
   (c-set-offset 'innamespace '0)
   (c-toggle-hungry-state t)
   (which-function-mode t)
-  (modify-syntax-entry ?_ "w"))
+  (modify-syntax-entry ?_ "w")
+  (font-lock-add-keywords nil
+			  '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
 ;; don't use delete-trailing-whitespace because it would introduce too many unnecessary changes
 
 
