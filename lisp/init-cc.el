@@ -25,7 +25,7 @@
   (c-toggle-hungry-state t)
   (which-function-mode t)
   (modify-syntax-entry ?_ "w")
-  (highlight-phrase "\\bFIXME\\b\\|\\bTODO\\b\\|\\bBUG\\b" (quote hi-yellow)))
+  (highlight-phrase "\\bFIXME\\|TODO\\|BUG" (quote hi-yellow)))
 ;; don't use delete-trailing-whitespace because it would introduce too many unnecessary changes
 
 
