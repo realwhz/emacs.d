@@ -25,8 +25,7 @@
   (c-toggle-hungry-state t)
   (which-function-mode t)
   (modify-syntax-entry ?_ "w")
-  (font-lock-add-keywords nil
-			  '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
+  (highlight-phrase "\\bFIXME\\b\\|\\bTODO\\b\\|\\bBUG\\b" (quote hi-yellow)))
 ;; don't use delete-trailing-whitespace because it would introduce too many unnecessary changes
 
 
