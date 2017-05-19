@@ -58,7 +58,7 @@
 
 
 ;;; Evil config
-;;(require 'init-evil)
+(require 'init-evil)
 
 
 ;;; GNU Global

@@ -47,6 +47,8 @@
 ;;      ;; force update evil keymaps after ggtags-mode loaded
 ;;      (add-hook 'ggtags-mode-hook #'evil-normalize-keymaps)))
 
+(eval-after-load 'evil-core
+  '(evil-set-initial-state 'magit-popup-mode 'emacs))
 
 
 (provide 'init-evil)
