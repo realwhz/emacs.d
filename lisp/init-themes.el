@@ -9,4 +9,6 @@
     (load-theme 'solarized-dark t)
   (load-theme 'minimal-vim t))
 
+;;(set-background-color "#FFFFEA")  ; The Acme bg color
+
 (provide 'init-themes)

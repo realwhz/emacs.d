@@ -12,6 +12,8 @@
 (setq auto-save-default nil)
 (setq backup-by-copying t)
 
+(setq dired-listing-switches "-alF")
+
 (ffap-bindings)
 ;; (setq ffap-require-prefix t) ; C-u C-x C-f for example
 
@@ -26,13 +28,13 @@
 ;;(desktop-save-mode t)
 
 ;; keep the phrase searched highlighted
-;;(setq lazy-highlight-cleanup nil)
+(setq lazy-highlight-cleanup nil)
 
 (require-package 'whole-line-or-region)
-;;(whole-line-or-region-mode t)
+(whole-line-or-region-mode t)
 
 (require-package 'dot-mode)
-;;(add-hook 'find-file-hooks 'dot-mode-on)
+(add-hook 'find-file-hooks 'dot-mode-on)
 
 
 (provide 'init-misc)

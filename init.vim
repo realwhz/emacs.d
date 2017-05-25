@@ -119,7 +119,7 @@ set nomodeline
 set path=.,..,/usr/include,**
 
 " Set working directory to the current file
-autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
+"autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 
 " Guess the alternative file
 function GuessAlternative()
@@ -128,9 +128,9 @@ function GuessAlternative()
     let newname=""
 
     if (suffix=="cpp")
-        return expand("%:r").".h"
+        return expand("%:t:r").".h"
     elseif (suffix=="h")
-        return expand("%:r").".cpp"
+        return expand("%:t:r").".cpp"
     endif
 endfunction
 
@@ -142,7 +142,9 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " bind K to grep word under cursor instead of man
-  set keywordprg=ag\ --nogroup\ --nocolor
+  " keywordprg way doesn't support quickfix
+  "set keywordprg=ag\ --nogroup\ --nocolor
+  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
@@ -209,7 +211,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mhinz/vim-grepper'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 let g:ctrlp_max_files = 10000

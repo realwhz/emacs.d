@@ -31,6 +31,10 @@
 (require 'init-text)
 
 
+;;; Dired
+(require 'init-dired)
+
+
 ;;; CC mode customization
 (require 'init-cc)
 
@@ -58,7 +62,7 @@
 
 
 ;;; Evil config
-(require 'init-evil)
+;;(require 'init-evil)
 
 
 ;;; GNU Global
