@@ -6,9 +6,8 @@
 (setq solarized-distinct-fringe-background t)
 
 (if (window-system)
-    (load-theme 'solarized-dark t)
+    (load-theme 'acme t)
   (load-theme 'minimal-vim t))
 
-;;(set-background-color "#FFFFEA")  ; The Acme bg color
 
 (provide 'init-themes)

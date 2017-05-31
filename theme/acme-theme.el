@@ -1,0 +1,36 @@
+(deftheme acme
+  "A non-colorful theme")
+
+(custom-theme-set-faces
+ 'acme
+
+ `(default ((t (:foreground "black" :background "#ffffea"))))
+ `(font-lock-builtin-face ((t (:weight bold))))
+ `(font-lock-comment-face ((t (:foreground "#707470"))))
+ `(font-lock-constant-face ((t (:foreground "black"))))
+ `(font-lock-doc-face ((t (:inherit font-lock-comment-face))))
+ `(font-lock-function-name-face ((t (:inherit font-lock-constant-face))))
+ `(font-lock-keyword-face ((t (:weight bold))))
+ `(font-lock-string-face ((t (:foreground "#707470"))))
+ `(font-lock-type-face ((t (:inherit font-lock-constant-face))))
+ `(font-lock-variable-name-face ((t (:inherit font-lock-constant-face))))
+ `(font-lock-warning-face ((t nil)))
+ `(fringe ((t (:background "#ffffff"))))
+ `(glyphless-char ((t (:slant italic))))
+ `(highlight ((t (:weight bold))))
+ `(isearch ((t (:background "#eeee9e"))))
+ `(isearch-fail ((t (:weight bold))))
+ `(italic ((t (:slant italic))))
+ `(lazy-highlight ((t (:inherit isearch))))
+ `(link ((t (:inherit button))))
+ `(link-visited ((t (:inherit link :box (:line-width 1 :color "#707470" :style pressed-button)))))
+ `(minibuffer-prompt ((t (:weight bold))))
+ `(mode-line ((t (:inherit mode-line :background "gray93" :foreground "#000000" :height 110))))
+ `(mode-line-inactive ((t (:inherit mode-line))))
+ `(mouse ((t (:background "#000000" :foreground "#ffffff"))))
+ `(region ((t (:background "#eeee9e"))))
+ `(secondary-selection ((t (:background "#e9eee9"))))
+ `(show-paren-match ((t (:weight bold))))
+ )
+
+(provide-theme 'acme)
