@@ -15,7 +15,7 @@
 (setq dired-listing-switches "-alF")
 
 (ffap-bindings)
-;; (setq ffap-require-prefix t) ; C-u C-x C-f for example
+(setq ffap-require-prefix t) ; C-u C-x C-f for example
 
 ;; (setq ido-enable-flex-matching t); flexibly match names
 ;; (setq ido-everywhere t); use ido-mode everywhere, in buffers and for finding files
@@ -24,6 +24,9 @@
 
 (unless (window-system)
   (xterm-mouse-mode t))
+
+;; don't open Ediff control panel in another frame
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;;(desktop-save-mode t)
 
