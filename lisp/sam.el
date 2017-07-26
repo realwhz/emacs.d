@@ -117,9 +117,9 @@
   "The address mark for each sam editing buffer.")
 (make-variable-buffer-local 'sam-reference)
 
-(defvar sam-current-dot nil
+(defvar sam-dot nil
   "The dot in current buffer.")
-(make-variable-buffer-local 'sam-current-dot)
+(make-variable-buffer-local 'sam-dot)
 
 (defvar sam-please-go-away nil
   "Non-nil means sam is not wanted anymore.")
@@ -211,9 +211,12 @@
 (put 'sam-command 'lisp-indent-function 1)
 
 (defmacro sam-get-dot ()
-  '(if (use-region-p)
-       (sam-set-dot (region-beginning) (region-end))
-     (sam-set-dot)))
+  '(cond ((use-region-p)
+	  (setq sam-dot (cons (region-beginning) (region-end))))
+	 ((not (null (mark)))
+	  (setq sam-dot (cons (min (point) (mark)) (max (point) (mark)))))
+	 (t
+	  (setq sam-dot (cons (point) (point))))))
 
 (defmacro sam-set-dot (&optional beg end)
   (or beg
@@ -223,7 +226,7 @@
   (` (progn
        (set-mark (, beg))
        (goto-char (, end))
-       (setq sam-current-dot (cons (, beg) (, end))))))
+       (setq sam-dot (cons (, beg) (, end))))))
 
 (defmacro sam-highlight-dot ()
   '(setq mark-active (not (eq (mark) (point)))))
