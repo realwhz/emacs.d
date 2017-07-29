@@ -234,23 +234,20 @@
   (sam-command addr)
   (goto-char (sam-addr-end addr))
   (insert-before-markers str)
-  (sam-set-dot (sam-addr-end addr))
-  (setq mark-active t))
+  (sam-set-dot (sam-addr-end addr)))
 
 (defun sam-change (addr str)
   (sam-command addr)
   (kill-region (sam-addr-beg addr) (sam-addr-end addr))
   (goto-char (sam-addr-beg addr))
   (insert-before-markers str)
-  (sam-set-dot (sam-addr-beg addr))
-  (sam-highlight-dot))
+  (sam-set-dot (sam-addr-beg addr)))
 
 (defun sam-insert (addr str)
   (sam-command addr)
   (goto-char (sam-addr-beg addr))
   (insert-before-markers str)
-  (sam-set-dot (sam-addr-beg addr))
-  (sam-highlight-dot))
+  (sam-set-dot (sam-addr-beg addr)))
 
 (defun sam-delete (addr)
   (sam-command addr)
@@ -316,8 +313,7 @@
 
 (defun sam-print (addr)
   (sam-command addr)
-  (sam-set-dot (sam-addr-beg addr) (sam-addr-end addr))
-  (sam-highlight-dot))
+  (sam-set-dot (sam-addr-beg addr) (sam-addr-end addr)))
 
 (defun sam-value (addr char-addr-only)
   (set-buffer (sam-addr-buffer addr))
@@ -484,8 +480,7 @@
   (sam-command addr)
   (kill-region (sam-addr-beg addr) (sam-addr-end addr))
   (shell-command command t)
-  (sam-set-dot (sam-addr-beg addr) (mark))
-  (sam-highlight-dot))
+  (sam-set-dot (mark) (sam-addr-beg addr)))
 
 (defun sam-pipe-out (addr command)
   (setq command (sam-last-shell-command command))
@@ -497,8 +492,7 @@
   (sam-command addr)
   (shell-command-on-region (sam-addr-beg addr) (sam-addr-end addr)
 			   command t t)
-  (sam-set-dot (sam-addr-beg addr) (mark))
-  (sam-highlight-dot))
+  (sam-set-dot (mark) (sam-addr-beg addr)))
 
 (defun sam-shell (command)
   (setq command (sam-last-shell-command command))
