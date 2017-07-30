@@ -225,7 +225,7 @@
        (setq sam-dot (cons (, beg) (, end))))))
 
 (defmacro sam-highlight-dot ()
-  '(setq mark-active t))
+  '(setq mark-active (not (eq (mark) (point)))))
 
 
 ;;; Text commands.
@@ -633,8 +633,7 @@
 	 (and (equal addr new-addr)
 	      (setq new-addr (sam-plus addr 1)))
 	 (setq addr new-addr)))
-  (sam-set-dot (sam-addr-beg addr) (sam-addr-end addr))
-  (goto-char (sam-addr-end addr)))
+  (sam-set-dot (sam-addr-beg addr) (sam-addr-end addr)))
 
 (defun sam-print-addr (addr)
   (let ((beg (1- (sam-addr-beg addr)))
