@@ -185,28 +185,28 @@
 ;;; Address structure constructors and accessors.
 
 (defmacro sam-make-addr (buffer beg end)
-  (` (cons (, buffer) (cons (, beg) (, end)))))
+  `(cons ,buffer (cons ,beg ,end)))
 
 (defmacro sam-addr-buffer (addr)
-  (` (car (, addr))))
+  `(car ,addr))
 
 (defmacro sam-addr-beg (addr)
-  (` (car (cdr (, addr)))))
+  `(car (cdr ,addr)))
 
 (defmacro sam-addr-end (addr)
-  (` (cdr (cdr (, addr)))))
+  `(cdr (cdr ,addr)))
 
 
 ;;; Command run-time support functions.
 
 (defmacro sam-command (addr &rest body)
-  (` (progn
-       (set-buffer (sam-addr-buffer (, addr)))
-       (or (memq (current-buffer)
-		 sam-affected-buffers)
-	   (setq sam-affected-buffers (cons (current-buffer)
-					    sam-affected-buffers)))
-       (,@ body))))
+  `(progn
+     (set-buffer (sam-addr-buffer ,addr))
+     (or (memq (current-buffer)
+	       sam-affected-buffers)
+	 (setq sam-affected-buffers (cons (current-buffer)
+					  sam-affected-buffers)))
+     ,@body))
 (put 'sam-command 'lisp-indent-function 1)
 
 (defmacro sam-get-dot ()
@@ -219,10 +219,10 @@
       (setq beg '(point)))
   (or end
       (setq end '(point)))
-  (` (progn
-       (set-mark (, beg))
-       (goto-char (, end))
-       (setq sam-dot (cons (, beg) (, end))))))
+  `(progn
+       (set-mark ,beg)
+       (goto-char ,end)
+       (setq sam-dot (cons ,beg ,end))))
 
 (defmacro sam-highlight-dot ()
   '(setq mark-active (not (eq (mark) (point)))))
