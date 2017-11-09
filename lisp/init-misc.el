@@ -33,11 +33,11 @@
 ;; keep the phrase searched highlighted
 (setq lazy-highlight-cleanup nil)
 
-(require-package 'whole-line-or-region)
-(whole-line-or-region-mode t)
-
 (require-package 'dot-mode)
 (add-hook 'find-file-hooks 'dot-mode-on)
+
+;; show TAB with wide cursor
+(setq x-stretch-cursor t)
 
 
 (provide 'init-misc)

@@ -89,6 +89,7 @@
 (require 'init-sam)
 
 
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -96,7 +97,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (cmake-mode zenburn-theme whole-line-or-region solarized-theme projectile go-mode ggtags fullframe exec-path-from-shell cider ag))))
+    (cmake-mode zenburn-theme solarized-theme projectile go-mode ggtags fullframe exec-path-from-shell cider ag))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
