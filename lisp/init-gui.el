@@ -8,6 +8,15 @@
       (tool-bar-mode -1))
   (menu-bar-mode -1))
 
+(if (daemonp)
+    (add-hook 'after-make-frame-functions
+              (lambda (frame)
+                (when (eq (length (frame-list)) 2)
+                  (progn
+                    (if (window-system)
+                        (menu-bar-mode t)
+                      (menu-bar-mode -1))
+                    (tool-bar-mode -1))))))
 
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 1)))
 (setq mouse-wheel-progressive-speed nil)
