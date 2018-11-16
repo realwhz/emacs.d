@@ -15,7 +15,7 @@
  `(font-lock-type-face ((t (:inherit font-lock-constant-face))))
  `(font-lock-variable-name-face ((t (:inherit font-lock-constant-face))))
  `(font-lock-warning-face ((t nil)))
- `(fringe ((t (:inherit fringe :background "ffffff" :foreground "#99994c"))))
+ `(fringe ((t (:inherit fringe :background "#ffffff" :foreground "#99994c"))))
  `(glyphless-char ((t (:slant italic))))
  `(highlight ((t (:weight bold))))
  `(isearch ((t (:background "#eeee9e"))))
