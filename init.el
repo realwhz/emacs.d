@@ -1,4 +1,4 @@
-(package-initialize)
+;;(package-initialize)
 
 (when (version<= emacs-version "24")
   (error "Your Emacs is too old"))
@@ -31,17 +31,35 @@
 (require 'init-text)
 
 
+;;; Projectile
+(require 'init-projectile)
+
+
+;;; Ivy
+(require 'init-ivy)
+
+
+;;; Ripgrep
+(require 'init-rg)
+
+
 ;;; Dired
 (require 'init-dired)
+
+
+;;; Git
+(require 'init-git)
+
+
+;;; LSP client
+(require 'init-lsp)
 
 
 ;;; CC mode customization
 (require 'init-cc)
 
 
-;;; CMake/Scons config
-(require 'init-scons)
-
+;;; CMake
 (require 'init-cmake)
 
 
@@ -61,46 +79,10 @@
 (require 'init-line)
 
 
-;;; Evil config
-;;(require 'init-evil)
-
-
-;;; GNU Global
-;; (require 'init-gtags)
-
-
-;;; Helm config
-;; (require 'init-helm)
-
-
-;;; ag - the silver searcher config
-(require 'init-ag)
-
-
-;;; Projectile
-(require 'init-projectile)
-
-
-;;; Git
-(require 'init-git)
+;;; Org
+(require 'init-org)
 
 
 ;;; Sam
-(require 'init-sam)
-
-
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (cmake-mode zenburn-theme solarized-theme projectile go-mode ggtags fullframe exec-path-from-shell cider ag))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;;(require 'init-sam)
+;;

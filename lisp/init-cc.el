@@ -24,12 +24,10 @@
   (which-function-mode t)
   (modify-syntax-entry ?_ "w")
   (highlight-phrase "\\bFIXME\\b\\|\\bTODO\\b\\|\\bBUG\\b\\|\\bXXX\\b" '(hi-yellow)))
-;; don't use delete-trailing-whitespace because it would introduce too many unnecessary changes
+  ;; don't use delete-trailing-whitespace because it would introduce too many unnecessary changes
 
 
-(add-hook 'c-mode-hook 'my-c-mode-common-hook)
-
-(add-hook 'c++-mode-hook 'my-c-mode-common-hook)
+(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 

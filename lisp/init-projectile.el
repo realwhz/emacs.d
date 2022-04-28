@@ -1,11 +1,11 @@
 (require-package 'projectile)
 
-(defun schnouki/projectile-ag (orig-fun &rest args)
-  (let ((grep-find-ignored-directories (copy-sequence grep-find-ignored-directories)))
-    (apply orig-fun args)))
-(advice-add 'projectile-ag :around #'schnouki/projectile-ag)
-;; (advice-remove 'projectile-ag #'schnouki/projectile-ag)
+(setq projectile-completion-system 'ivy)
+(setq projectile-switch-project-action #'treemacs)
 
-(projectile-mode t)
+(projectile-mode 1)
+
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+
 
 (provide 'init-projectile)

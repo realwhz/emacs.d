@@ -1,4 +1,4 @@
-(show-paren-mode t)
+(show-paren-mode 1)
 
 (setq ispell-program-name "aspell")
 
@@ -23,7 +23,7 @@
 ;; (ido-mode t)
 
 (unless (window-system)
-  (xterm-mouse-mode t))
+  (xterm-mouse-mode 1))
 
 ;; don't open Ediff control panel in another frame
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
@@ -38,6 +38,9 @@
 
 ;; show TAB with wide cursor
 (setq x-stretch-cursor t)
+
+;; turn on auto-revert mode globally
+(global-auto-revert-mode 1)
 
 
 (provide 'init-misc)
