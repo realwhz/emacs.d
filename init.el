@@ -84,5 +84,5 @@
 
 
 ;;; Sam
-;;(require 'init-sam)
-;;
+(require 'init-sam)
+
