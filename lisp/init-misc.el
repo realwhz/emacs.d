@@ -42,5 +42,24 @@
 ;; turn on auto-revert mode globally
 (global-auto-revert-mode 1)
 
+(defun region-as-shell-command (b e)
+  "Run current line or selection in shell and insert output."
+  (interactive
+   (if (use-region-p)
+       (list (region-beginning) (region-end))
+     (let ((bounds (bounds-of-thing-at-point 'symbol)))
+       (list (car bounds) (cdr bounds)))))
+  (save-excursion
+    (goto-char e)
+    (unless (bolp) (insert "\n"))
+    (shell-command (buffer-substring-no-properties b e) t t)))
+
+(global-set-key (kbd "<mouse-2>") #'region-as-shell-command)
+(define-key key-translation-map (kbd "<M-down-mouse-1>") (kbd "<mouse-2>"))
+
+(defun tmp-buffer ()
+  (interactive)
+  (switch-to-buffer (make-temp-name "scratch")))
+
 
 (provide 'init-misc)
