@@ -3,7 +3,7 @@
       (setq default-frame-alist
             '((width . 90)
               (height . 40)
-              (font . "Monaco-12")
+              (font . "SF Mono-12")
               (fullscreen . maximized)))
       (tool-bar-mode -1))
   (menu-bar-mode -1))
