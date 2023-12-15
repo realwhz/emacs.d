@@ -42,6 +42,9 @@
 ;; turn on auto-revert mode globally
 (global-auto-revert-mode 1)
 
+;; turn on smooth scrolling
+(pixel-scroll-precision-mode 1)
+
 (defun region-as-shell-command (b e)
   "Run current line or selection in shell and insert output."
   (interactive
