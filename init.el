@@ -52,7 +52,7 @@
 
 
 ;;; LSP client
-;(require 'init-lsp)
+(require 'init-lsp)
 
 
 ;;; CC mode customization
@@ -87,7 +87,7 @@
 (require 'init-sam)
 
 ;;; Treesitter
-(require 'init-treesitter)
+;;(require 'init-treesitter)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -95,7 +95,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(go-mode cider clojure-mode cmake-mode magit rg dot-mode exec-path-from-shell fullframe)))
+   '(go-mode cider clojure-mode cmake-mode rg dot-mode exec-path-from-shell fullframe)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

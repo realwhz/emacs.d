@@ -23,7 +23,8 @@
   (c-set-offset 'innamespace '0)
   (which-function-mode t)
   (modify-syntax-entry ?_ "w")
-  (highlight-phrase "\\bFIXME\\b\\|\\bTODO\\b\\|\\bBUG\\b\\|\\bXXX\\b" '(hi-yellow)))
+  (highlight-phrase "\\bFIXME\\b\\|\\bTODO\\b\\|\\bBUG\\b\\|\\bXXX\\b" '(hi-yellow))
+  (electric-indent-mode -1))
   ;; don't use delete-trailing-whitespace because it would introduce too many unnecessary changes
 
 
